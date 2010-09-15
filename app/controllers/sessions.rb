@@ -1,7 +1,8 @@
-Admin.controllers :sessions do
+Wheresmymoney.controllers :sessions do
 
   get :new do
     if logged_in?
+      flash[:success] = "You are already logged in."
       redirect url(:base, :index)
     else
       render "/sessions/new", nil, :layout => false

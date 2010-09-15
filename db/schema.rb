@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 2) do
+ActiveRecord::Schema.define(:version => 3) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(:version => 2) do
     t.string   "crypted_password"
     t.string   "salt"
     t.string   "role"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "money", :force => true do |t|
+    t.decimal  "amount"
+    t.string   "currency"
+    t.datetime "datetime"
+    t.string   "concepts"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

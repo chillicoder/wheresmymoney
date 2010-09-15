@@ -1,0 +1,21 @@
+!!!
+%html{:lang => "en", :manifest => "/cache.manifest"}
+  %head
+    %meta(charset='utf-8')
+    %meta(name='viewport' content='width=device-width; initial-scale=1.0; maximum-scale=1.0;')
+    %title Where's my money?
+    = stylesheet_link_tag 'style', 'handled'
+    = javascript_include_tag 'jquery'
+  %body
+    %header
+      Where's my money?
+      =link_to pat(:logout), url(:sessions, :destroy), :method => :delete
+
+    =yield
+
+    %footer
+      Where's my money? | Copyleft 2010 -
+      %a{:href => "http://www.q-innova.com.ar"} Q-Innova
+      |
+      %a{:href => "mailto:contact@q-innova.com.ar"} Contact Us
+    = javascript_include_tag 'jquery-ujs', 'modernizr-1.5.min', 'application'

@@ -1,6 +1,7 @@
 class Wheresmymoney < Padrino::Application
   register Padrino::Mailer
   register Padrino::Helpers
+  register Padrino::Admin::AccessControl
 
   ##
   # Application configuration options
@@ -31,4 +32,17 @@ class Wheresmymoney < Padrino::Application
   #     render 'errors/404'
   #   end
   #
+
+  set :login_page, "/sessions/new"
+  disable :store_location
+
+  access_control.roles_for :any do |role|
+    role.protect "/"
+    role.allow "/sessions"
+  end
+=begin
+  access_control.roles_for :admin do |role|
+      role.project_module :accounts, "/accounts"
+  end
+=end
 end
