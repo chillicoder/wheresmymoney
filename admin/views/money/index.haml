@@ -1,0 +1,39 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active=link_to pat(:list), url(:money, :index)
+      %li=link_to pat(:new), url(:money, :new)
+  .content
+    %h2.title
+      =pat(:all)
+      =mt(:money)
+    .inner
+      %table.table
+        %tr
+          %th.first=mat(:money, :id)
+          %th=mat(:money, :amount)
+          %th=mat(:money, :currency)
+          %th=mat(:money, :datetime)
+          %th=mat(:money, :concepts)
+          %th=mat(:money, :created_at)
+          %th=mat(:money, :updated_at)
+          %th=mat(:money, :account_id)
+          %th.last="&nbsp;"
+        -@money.each do |money|
+          %tr
+            %td.first=money.id
+            %td=money.amount
+            %td=money.currency
+            %td=money.datetime
+            %td=money.concepts
+            %td=money.created_at
+            %td=money.updated_at
+            %td=money.account_id
+            %td.last
+              =button_to pat(:edit), url(:money, :edit, :id => money.id), :method => :get, :class => :button_to
+              ="|"
+              =button_to pat(:delete), url(:money, :destroy, :id => money.id), :method => :delete, :class => :button_to
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")
