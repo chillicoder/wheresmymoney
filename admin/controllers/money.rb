@@ -12,6 +12,9 @@ Admin.controllers :money do
 
   post :create do
     @money = Money.new(params[:money])
+    # Relate the money to the current user unless another account was specified
+    @money.account = @current_account if @money.account_id.nil?
+
     if @money.save
       flash[:notice] = 'Money was successfully created.'
       redirect url(:money, :edit, :id => @money.id)

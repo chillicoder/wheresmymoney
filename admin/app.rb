@@ -15,7 +15,8 @@ class Admin < Padrino::Application
   # disable :flash              # Disables rack-flash (enabled by default if sessions)
   # layout  :my_layout          # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
   #
-
+  
+  set :session_id, "wheresmymoney"
   set :login_page, "/admin/sessions/new"
   disable :store_location
 
@@ -25,10 +26,11 @@ class Admin < Padrino::Application
   end
 
   access_control.roles_for :member, :another, :third do |role|
+    role.project_module :money, "/money"
   end
 
   access_control.roles_for :admin do |role|
-      role.project_module :money, "/money"
+    role.project_module :money, "/money"
     role.project_module :accounts, "/accounts"
   end
 end

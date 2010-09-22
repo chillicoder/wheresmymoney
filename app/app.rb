@@ -33,12 +33,13 @@ class Wheresmymoney < Padrino::Application
   #   end
   #
 
-  set :login_page, "/sessions/new"
+  set :session_id, "wheresmymoney"
+  set :login_page, "/admin/sessions/new"
   disable :store_location
 
   access_control.roles_for :any do |role|
     role.protect "/"
-    role.allow "/sessions"
+    role.allow "/admin/sessions"
   end
 =begin
   access_control.roles_for :admin do |role|
