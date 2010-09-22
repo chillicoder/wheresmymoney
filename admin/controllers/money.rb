@@ -1,7 +1,7 @@
 Admin.controllers :money do
 
   get :index do
-    @money = Money.all
+    @money = Money.find_all_by_account_id(@current_account.id)
     render 'money/index'
   end
 

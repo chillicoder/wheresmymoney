@@ -25,10 +25,6 @@ class Admin < Padrino::Application
     role.allow "/sessions"
   end
 
-  access_control.roles_for :member, :another, :third do |role|
-    role.project_module :money, "/money"
-  end
-
   access_control.roles_for :admin do |role|
     role.project_module :money, "/money"
     role.project_module :accounts, "/accounts"

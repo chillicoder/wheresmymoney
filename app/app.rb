@@ -41,9 +41,4 @@ class Wheresmymoney < Padrino::Application
     role.protect "/"
     role.allow "/admin/sessions"
   end
-=begin
-  access_control.roles_for :admin do |role|
-      role.project_module :accounts, "/accounts"
-  end
-=end
 end
