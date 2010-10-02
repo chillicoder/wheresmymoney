@@ -22,4 +22,14 @@ Admin.controllers :sessions do
     set_current_account(nil)
     redirect url(:sessions, :new)
   end
+
+  get :language do
+    if I18n.locale == :es
+      I18n.locale = :en
+    else
+      I18n.locale = :es
+    end
+
+    redirect url(:base, :index)
+  end
 end

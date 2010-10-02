@@ -1,0 +1,13 @@
+es:
+  models:
+    money:
+      name: Plata
+      attributes:
+        id: Id
+        amount: Monto
+        currency: Moneda
+        datetime: Fecha
+        concepts: Conceptos
+        created_at: Creado
+        updated_at: Actualizado
+        account_id: Usuario

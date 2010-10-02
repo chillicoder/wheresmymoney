@@ -15,6 +15,10 @@ end
 Bundler.require(:default, PADRINO_ENV.to_sym)
 puts "=> Located #{Padrino.bundle} Gemfile for #{Padrino.env}"
 
+I18n.locale = :es
+I18n.locale = :en
+
+
 ##
 # Add here your before load hooks
 #

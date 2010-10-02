@@ -1,0 +1,13 @@
+en:
+  models:
+    money:
+      name: Money
+      attributes:
+        id: Id
+        amount: Amount
+        currency: Currency
+        datetime: Datetime
+        concepts: Concepts
+        created_at: Created at
+        updated_at: Updated at
+        account_id: Account

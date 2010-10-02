@@ -1,0 +1,14 @@
+es:
+  models:
+    account:
+      name: Usuario
+      attributes:
+        id: Id
+        name: Nombre
+        surname: Apellido
+        email: Email
+        crypted_password: Contraseña encriptada
+        salt: Semilla
+        role: Rol
+        created_at: Creado
+        updated_at: Actualizado

@@ -3,13 +3,14 @@
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
     %title Padrino Admin
-    =stylesheet_link_tag :base, "themes/default/style"
+      =stylesheet_link_tag :base, "themes/default/style"
   %body
     #container
       #header
         %h1=link_to "Padrino Admin", url(:base_index)
         #user-navigation
           %ul.wat-cf
+            %li=link_to pat(:language), url(:sessions, :language)
             %li=link_to pat(:profile), url(:accounts, :edit, :id => current_account.id)
             %li=link_to pat(:logout), url(:sessions, :destroy), :method => :delete
         #main-navigation
@@ -26,6 +27,7 @@
               %p
                 Copyleft
                 =Time.now.year
-                Q-Innova - Powered by
+                %a{:title => "Q-Innova", :href => "http://www.q-innova.com.ar"} Q-Innova
+                \- Powered by
                 =link_to "Padrino v.#{Padrino.version}", "http://padrino.github.com", :target => :_blank
         #sidebar=yield_content :sidebar

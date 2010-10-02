@@ -2,24 +2,29 @@
 %html{:lang => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
-    %title Padrino Admin
+    %title
+      =I18n.t("application_name")
     =stylesheet_link_tag :base, "themes/default/style"
   %body
     #container
       #box
-        %h1 Padrino Admin
+        %h1
+          =I18n.t("application_name")
         #block-login.block
-          %h2 Login Box
+          %h2 
+            =I18n.t("login_box")
           .content.login
             .flash=[:error, :warning, :notice].map { |type| flash_tag(type, :class => "message #{type}") }.join
             -form_tag(url(:sessions, :create), :class => 'form login') do
               .group.wat-cf
                 .left
-                  %label.label.right Login
+                  %label.label.right
+                    =I18n.t("login")
                 .right=text_field_tag :email, :value => params[:email], :class => :text_field
               .group.wat-cf
                 .left
-                  %label.label.right Password
+                  %label.label.right
+                    =I18n.t("password")
                 .right=password_field_tag :password, :value => params[:password], :class => :text_field
               .group.navform.wat-cf
-                .right=submit_tag('Sign In', :class => :button)
+                .right=submit_tag(I18n.t("sign_in"), :class => :button)
