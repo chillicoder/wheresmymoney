@@ -20,8 +20,14 @@ ActiveRecord::Base.configurations[:development] = {
 }
 
 ActiveRecord::Base.configurations[:production] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', "wheresmymoney_production.db")
+  # Fill in with your own details
+ 
+  :adapter => 'postgresql',
+  :encoding => 'utf8',
+  :database => '',
+  :username => '',
+  :password => '',
+  :host => ''
 
 }
 

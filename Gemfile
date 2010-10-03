@@ -8,13 +8,22 @@ gem 'thin' # or mongrel
 # Component requirements
 gem 'haml'
 gem 'activerecord', :require => "active_record"
-gem 'sqlite3-ruby', :require => "sqlite3"
-gem 'spork'
 
-# Test requirements
-gem 'rspec', :require => "spec", :group => "test"
-gem 'rack-test', :require => "rack/test", :group => "test"
+group :production do
+  gem 'pg'
+end
 
+group :development do
+  gem 'sqlite3-ruby', :require => "sqlite3"
+end
+
+group :test do
+  gem 'spork'
+
+  # Test requirements
+  gem 'rspec', :require => "spec"
+  gem 'rack-test', :require => "rack/test"
+end
 
 # Padrino
 gem 'padrino', "0.9.16"
