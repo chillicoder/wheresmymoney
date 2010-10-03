@@ -6,7 +6,9 @@ es:
         id: Id
         name: Nombre
         surname: Apellido
-        email: Email
+        email: E-mail
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
         crypted_password: Contraseña encriptada
         salt: Semilla
         role: Rol
