@@ -26,4 +26,4 @@ group :test do
 end
 
 # Padrino
-gem 'padrino', "0.9.17"
+gem 'padrino', "0.9.18"
