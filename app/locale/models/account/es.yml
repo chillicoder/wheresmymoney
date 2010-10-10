@@ -1,7 +1,7 @@
 es:
   models:
     account:
-      name: Usuario
+      name: Usuario 
       attributes:
         id: Id
         name: Nombre

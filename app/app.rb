@@ -1,4 +1,5 @@
 class Wheresmymoney < Padrino::Application
+  register AnalyticsInitializer
   register Padrino::Mailer
   register Padrino::Helpers
   register Padrino::Admin::AccessControl
