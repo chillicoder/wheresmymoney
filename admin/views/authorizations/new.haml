@@ -1,0 +1,14 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first=link_to pat(:list), url(:authorizations, :index)
+      %li.active=link_to pat(:new), url(:authorizations, :new)
+  .content
+    %h2.title
+      =pat(:new)
+      =mt(:authorization)
+    .inner
+      -form_for :authorization, url(:authorizations, :create), :class => :form do |f|
+        =partial "authorizations/form", :locals => { :f => f }
+
+-content_for :sidebar, partial("base/sidebar")

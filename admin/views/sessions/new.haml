@@ -13,7 +13,23 @@
         #block-login.block
           %h2 
             =I18n.t("login_box")
+
           .content.login
+            %h3
+              %a{:title => "Facebook", :href => "/auth/facebook"}
+                =I18n.t("login_facebook")
+            %h3
+              %a{:title => "Twitter", :href => "/auth/twitter"}
+                =I18n.t("login_twitter")
+            %h3
+              %a{:title => "Twitter", :href => "/auth/open_id"}
+                =I18n.t("login_openid")
+            %h3
+              %a{:title => "Twitter", :href => "/auth/google_apps"}
+                =I18n.t("login_googleapps")
+
+            %h3
+              =I18n.t("login_local")
             .flash=[:error, :warning, :notice].map { |type| flash_tag(type, :class => "message #{type}") }.join
             -form_tag(url(:sessions, :create), :class => 'form login') do
               .group.wat-cf

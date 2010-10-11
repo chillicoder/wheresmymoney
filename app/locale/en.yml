@@ -1,6 +1,11 @@
 en:
   application_name: Where's my money?
   login_box: Login Box
+  login_facebook: Login with Facebook
+  login_twitter: Login with Twitter
+  login_openid: Login with OpenId
+  login_googleapps: Login with Google Apps
+  login_local: Login local
   login: Login
   password: Password
   sign_in: Sign In

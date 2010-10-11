@@ -3,6 +3,9 @@ require 'digest/sha1'
 class Account < ActiveRecord::Base
   attr_accessor :password
 
+  # Relations
+  has_many :authorizations
+
   # Validations
   validates_presence_of     :email, :role
   validates_presence_of     :password,                   :if => :password_required
@@ -17,7 +20,14 @@ class Account < ActiveRecord::Base
   # Callbacks
   before_save :generate_password
 
-  ##
+  # This method is for external authentication
+  def self.create_from_hash!(hash)
+    create(:email => hash['user_info']['nickname'] + '@' + hash['provider'] + ".com",
+          :role => "member",
+          :password => "pass",
+          :password_confirmation => "pass")
+  end
+
   # This method is for authentication purpose
   #
   def self.authenticate(email, password)

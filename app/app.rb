@@ -1,4 +1,5 @@
 class Wheresmymoney < Padrino::Application
+  register OmniauthInitializer
   register AnalyticsInitializer
   register Padrino::Mailer
   register Padrino::Helpers
@@ -41,5 +42,6 @@ class Wheresmymoney < Padrino::Application
   access_control.roles_for :any do |role|
     role.protect "/"
     role.allow "/admin/sessions"
+    role.allow "/auth"
   end
 end

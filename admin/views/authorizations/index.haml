@@ -1,0 +1,35 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active=link_to pat(:list), url(:authorizations, :index)
+      %li=link_to pat(:new), url(:authorizations, :new)
+  .content
+    %h2.title
+      =pat(:all)
+      =mt(:authorization)
+    .inner
+      %table.table
+        %tr
+          %th.first=mat(:authorization, :id)
+          %th=mat(:authorization, :provider)
+          %th=mat(:authorization, :uid)
+          %th=mat(:authorization, :created_at)
+          %th=mat(:authorization, :updated_at)
+          %th=mat(:authorization, :account_id)
+          %th.last="&nbsp;"
+        -@authorizations.each do |authorization|
+          %tr
+            %td.first=authorization.id
+            %td=authorization.provider
+            %td=authorization.uid
+            %td=authorization.created_at
+            %td=authorization.updated_at
+            %td=authorization.account_id
+            %td.last
+              =button_to pat(:edit), url(:authorizations, :edit, :id => authorization.id), :method => :get, :class => :button_to
+              ="|"
+              =button_to pat(:delete), url(:authorizations, :destroy, :id => authorization.id), :method => :delete, :class => :button_to
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")

@@ -1,6 +1,11 @@
 es:
   application_name: Y mi plata???
   login_box: Iniciar sesión
+  login_facebook: Iniciar sesión con Facebook
+  login_twitter: Iniciar sesión con Twitter
+  login_openid: Iniciar sesión con OpenId
+  login_googleapps: Iniciar sesión con Google Apps
+  login_local: Iniciar sesión normal
   login: Usuario
   password: Contraseña
   sign_in: Entrar
